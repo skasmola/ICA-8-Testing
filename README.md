@@ -1,2 +1,3 @@
 # ICA-8-Testing
-This is ICA-8 Test Assignment
+This assignment deals with counting urinals. It follows an unwritten rule such that no two persons can pee next to each other.
+
