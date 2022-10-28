@@ -23,13 +23,13 @@ public class urinalsTest {
     @Test
     void TestFileExists(){
         urinals u = new urinals();
-        assertEquals("urinals.dat",u.readFile("urinals.dat"));
+        assertEquals("File Found",u.readFile("urinals.dat"));
     }
 
     @Test
     void TestFileDoesntExist(){
         urinals u = new urinals();
-        assertEquals("urinals.dat",u.readFile("urinals.dat"));
+        assertEquals("File Not Found",u.readFile("urvinals.dat"));
     }
 
     @Test
@@ -37,7 +37,6 @@ public class urinalsTest {
         urinals u = new urinals();
         assertEquals("File is empty, please enter a valid file",u.readFile(""));
     }
-
 
 
 }
