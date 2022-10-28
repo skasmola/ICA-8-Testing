@@ -1,7 +1,6 @@
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
-import java.io.PrintWriter;
 import java.util.Scanner;
 
 // Author : Sakshith Reddy
@@ -15,12 +14,11 @@ public class urinals {
 
             String str = sc.nextLine();
 
-            int ans = countUrinals(str);
+            String ans = countUrinals(str);
 
             FileWriter fw = new FileWriter("rule.txt",true);
             BufferedWriter bw = new BufferedWriter(fw);
-            Integer a = ans;
-            bw.write(a.toString());
+            bw.write(ans);
             bw.newLine();
             bw.close();
 
@@ -28,10 +26,9 @@ public class urinals {
         }
     }
 
-    public static int countUrinals(String str){
+    public static String countUrinals(String str){
         int n = str.length();
         int ans = 0;
-
 
         if(str.charAt(0) == '0' && str.charAt(1) == '0'){
             char[] chars = str.toCharArray();
@@ -41,7 +38,6 @@ public class urinals {
         }
 
         for(int i = 1;i < n-1;i++){
-
             if(str.charAt(i) == '1'){
                 if(str.charAt(i-1) == '1' || str.charAt(i+1) == '1'){
                     ans = -1;
@@ -55,8 +51,7 @@ public class urinals {
                     ans++;
                 }
             }else {
-                System.out.println("Please enter valid input");
-                break;
+                return "Please Enter Valid Input";
             }
 
         }
@@ -68,6 +63,14 @@ public class urinals {
             ans++;
         }
 
-        return ans;
+        return String.valueOf(ans);
+    }
+
+    public String readFile(String s) {
+
+        if(s.isEmpty()){
+            return "File is empty, please enter a valid file";
+        }
+        return "urinals.dat";
     }
 }
