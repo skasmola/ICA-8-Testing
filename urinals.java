@@ -1,4 +1,7 @@
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 // Author : Sakshith Reddy
@@ -11,19 +14,21 @@ public class urinals {
         while (sc.hasNextLine()){
 
             String str = sc.nextLine();
-//            System.out.println(str);
 
-            String ans = countUrinals(str);
+            int ans = countUrinals(str);
+
+            FileWriter fw = new FileWriter("rule.txt",true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            Integer a = ans;
+            bw.write(a.toString());
+            bw.newLine();
+            bw.close();
 
             System.out.println(ans);
-
-//            write to file
-//            close
-
         }
     }
 
-    public static String countUrinals(String str){
+    public static int countUrinals(String str){
         int n = str.length();
         int ans = 0;
 
@@ -63,6 +68,6 @@ public class urinals {
             ans++;
         }
 
-        return String.valueOf(ans);
+        return ans;
     }
 }
