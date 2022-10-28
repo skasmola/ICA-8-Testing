@@ -5,6 +5,6 @@ public class urinalsTest {
 
     @Test
     void TestUrinals(){
-        Assertions.assertEquals(true,urinals.countUrinals("====== Sakshith Reddy == TEST TWO EXECUTED ======="));
+        Assertions.assertEquals(true,urinals.countUrinals("Sakshith"));
     }
 }
