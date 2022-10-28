@@ -10,13 +10,23 @@ public class urinals {
         File file = new File("urinal.dat");
         Scanner sc = new Scanner(file);
 
+        String fileName = "rule.txt";
+        int file_idx=0;
+        File filef = new File(fileName);
+        while(filef.exists())
+        {
+            file_idx++;
+            fileName = fileName.substring(0,4) + file_idx + ".txt";
+            filef = new File(fileName);
+        }
+
         while (sc.hasNextLine()){
 
             String str = sc.nextLine();
 
             String ans = countUrinals(str);
 
-            FileWriter fw = new FileWriter("rule.txt",true);
+            FileWriter fw = new FileWriter(filef,true);
             BufferedWriter bw = new BufferedWriter(fw);
             bw.write(ans);
             bw.newLine();
@@ -73,7 +83,15 @@ public class urinals {
         } else if (!fileName.equals("urinals.dat")) {
             return "File Not Found";
         }
+        return "File Found";
+    }
 
-        return "urinals.dat";
+    public String writeFile(String fileName,String content){
+
+        if(!fileName.equals("rule.txt")){
+            return "Invalid File Name";
+        }
+
+        return "";
     }
 }

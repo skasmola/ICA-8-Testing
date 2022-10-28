@@ -29,7 +29,7 @@ public class urinalsTest {
     @Test
     void TestFileDoesntExist(){
         urinals u = new urinals();
-        assertEquals("File Not Found",u.readFile("urvinals.dat"));
+        assertEquals("File Not Found",u.readFile("hjsfhdsv.dat"));
     }
 
     @Test
@@ -38,5 +38,9 @@ public class urinalsTest {
         assertEquals("File is empty, please enter a valid file",u.readFile(""));
     }
 
-
+    @Test
+    void TestBadFileName(){
+        urinals u = new urinals();
+        assertEquals("Invalid File Name",u.writeFile("ksdjvbdb.txt","jdsbvjh"));
+    }
 }
