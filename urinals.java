@@ -66,11 +66,14 @@ public class urinals {
         return String.valueOf(ans);
     }
 
-    public String readFile(String s) {
+    public String readFile(String fileName) {
 
-        if(s.isEmpty()){
+        if(fileName.isEmpty()){
             return "File is empty, please enter a valid file";
+        } else if (!fileName.equals("urinals.dat")) {
+            return "File Not Found";
         }
+
         return "urinals.dat";
     }
 }
